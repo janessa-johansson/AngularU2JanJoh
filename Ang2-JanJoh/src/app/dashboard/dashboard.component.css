@@ -1,0 +1,8 @@
+.fcontainer {
+    display: flex;
+    flex-flow: row;
+    justify-content: center; 
+    background-color: rgba(95, 158, 160, 0.685);
+    width: 420px;
+    padding-bottom: 10px;
+}

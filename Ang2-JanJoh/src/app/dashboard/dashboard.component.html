@@ -1,0 +1,4 @@
+<div class="fcontainer border border-info">
+  <app-users-list [users]="userList"></app-users-list>
+  <app-edit-users (addUserE)="addUser($event)" (deleteUserE)="deleteUser($event)"></app-edit-users>
+</div>

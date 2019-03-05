@@ -1,0 +1,8 @@
+.moveleft {
+    display: flex;
+    margin-left: 50px;
+    background-color: transparent;
+    padding: 10px;
+    flex-flow: column;
+    margin-top: 70px;
+}
