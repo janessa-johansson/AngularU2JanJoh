@@ -5,5 +5,23 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  constructor() { }
+  loggedUser:string;
+
+  constructor() {
+
+  }
+
+  checkIfLoggedIn(){
+    return localStorage.getItem('username');
+  }
+
+  public login(username){
+    localStorage.setItem('username', username);
+    this.loggedUser = username;
+  }
+
+  public logout(){
+    localStorage.clear();
+    this.loggedUser = undefined;
+  }
 }

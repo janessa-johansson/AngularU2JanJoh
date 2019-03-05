@@ -8,6 +8,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UserListItemComponent } from './user-list-item/user-list-item.component';
 import { EditUsersComponent } from './edit-users/edit-users.component';
+import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SingleuserComponent } from './singleuser/singleuser.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { EditUsersComponent } from './edit-users/edit-users.component';
     DashboardComponent,
     UsersListComponent,
     UserListItemComponent,
-    EditUsersComponent
+    EditUsersComponent,
+    LoginComponent,
+    PageNotFoundComponent,
+    SingleuserComponent
   ],
   imports: [
     BrowserModule,
