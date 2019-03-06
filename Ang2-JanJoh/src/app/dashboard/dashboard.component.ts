@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,31 +9,23 @@ import { AuthService } from '../auth.service';
 })
 export class DashboardComponent implements OnInit {
 
-  // loggedUser: string;
+  loggedUser: boolean;
 
   constructor(
-    private AuthService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) {
+
+    //Getting loggedUser from Authservice via inject.
+    this.loggedUser = authService.loggedUser;
+
     //Defining the userList
     this.userList = ['Mr. Nice', 'Narco', 'Bomvasto', 'Celeritas ', 'Magenta']
   }
 
-  loggedIn = '';
+  ngOnInit() {
 
-  ngOnInit(): void {
-
-    var checkLog:any = localStorage.getItem('username');
-    if (checkLog == null) {
-      var loggedIn = false;
-    
-    } else {
-      var loggedIn = true;
-    }
-    console.log(loggedIn);
-    console.log(localStorage.getItem('username'));
   }
-
-  
 
   //Defining userList as a string array
   userList: string[];

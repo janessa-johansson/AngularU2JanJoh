@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-singleuser',
@@ -9,16 +8,18 @@ import { Location } from '@angular/common';
 })
 export class SingleuserComponent implements OnInit {
 
-  user: string;
-
-  constructor(
-    private route: ActivatedRoute,
-    private location: Location
-
-  ) {}
-
-  ngOnInit() {
+  userId: string;
+  
+  constructor(private route: ActivatedRoute) {
+    
   }
 
+  ngOnInit() {
+    
+    this.route.params.subscribe(params => {
+      this.userId = params.id;
+   })
+  }
+ 
 
 }

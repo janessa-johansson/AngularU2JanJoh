@@ -1,5 +1,14 @@
-<div class="screen">
-  <p>Please Login</p>
-  <input [(ngModel)]="username" style="height: 50px" id="user" placeholder="username">
-  <button class="btn btn-primary" (click)="login()">Login</button>
+<div *ngIf="!loggedUser; else elseBlock">
+  <div class="screen">
+    <p>Please Login</p>
+    <input [(ngModel)]="username" style="height: 50px" id="user" placeholder="username">
+    <button class="btn btn-primary" (click)="login()">Login</button>
+  </div>
 </div>
+
+<ng-template #elseBlock>
+  <div>
+    <p>You are logged in.</p>
+    <button class="btn btn-primary" (click)="logout()">Logout</button>
+  </div>
+</ng-template>

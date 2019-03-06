@@ -7,8 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { SingleuserComponent } from './singleuser/singleuser.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  { path: 'user/:user', component: SingleuserComponent },
+  { path: '', component: LoginComponent },
+  { path: 'user/:id', component: SingleuserComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: '**', component: PageNotFoundComponent }

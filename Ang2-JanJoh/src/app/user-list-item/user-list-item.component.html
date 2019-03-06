@@ -1,6 +1,5 @@
 <ul class="list-group list-group-flush">
-  <li class="list-group-item" [ngStyle]=getColor()
-  routerLink="/user/{{ user }}">
-          {{ user }}
+  <li class="list-group-item" [ngStyle]=getColor() [routerLink]="['/user', user]">
+    {{ user }}
   </li>
 </ul>

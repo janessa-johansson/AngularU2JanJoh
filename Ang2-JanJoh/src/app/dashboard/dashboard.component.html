@@ -1,4 +1,6 @@
-<div *ngIf="loggedIn; else elseBlock">
+<!-- Locking dashboard unless the user is logged in.
+ If the user is not logged in, the "please log in" message will show. -->
+<div *ngIf="loggedUser; else elseBlock">
   <div class="fcontainer border border-info">
     <app-users-list [users]="userList"></app-users-list>
     <app-edit-users (addUserE)="addUser($event)" (deleteUserE)="deleteUser($event)"></app-edit-users>
