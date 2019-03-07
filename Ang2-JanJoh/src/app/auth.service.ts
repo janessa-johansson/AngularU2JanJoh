@@ -5,14 +5,16 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  loggedUser: boolean;
+  loggedUser: string;
 
 
   constructor() {
 
   }
 
-  // Note: checkIfLoggedIn not used and removed.
+  checkIfLoggedIn() {
+   return localStorage.getItem('username');
+  }
 
   // Method that handles logging in a user.
   // Stores username in local storage and sets loggedUser to true.
@@ -20,7 +22,7 @@ export class AuthService {
 
   public login(username) {
     localStorage.setItem('username', username);
-    this.loggedUser = true;
+    this.loggedUser = "exists";
   }
 
 
@@ -30,7 +32,6 @@ export class AuthService {
 
   public logout() {
     localStorage.clear();
-    this.loggedUser = false;
-
+    this.loggedUser = undefined;
   }
 }

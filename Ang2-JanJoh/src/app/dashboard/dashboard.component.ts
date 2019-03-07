@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
 
-  loggedUser: boolean;
+  loggedUser: string;
 
   constructor(
     private authService: AuthService,
