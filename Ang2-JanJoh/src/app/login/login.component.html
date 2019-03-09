@@ -1,13 +1,13 @@
 <div>
   <div *ngIf="loggedUser">
     <div>
-      <p>You are logged in.</p>
+      <p class="font-weight-light">You are logged in.</p>
       <button class="btn btn-primary" (click)="logout()">Logout</button>
     </div>
   </div>
 
   <div *ngIf="!loggedUser" class="screen">
-    <p>Please Login</p>
+    <p class="font-weight-light">Please Login.</p>
     <input [(ngModel)]="username" style="height: 50px" id="user" placeholder="username">
     <button class="btn btn-primary" (click)="login()" [routerLink]="[ '/login' ]">Login</button>
   </div>

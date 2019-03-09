@@ -16,8 +16,8 @@ export class DashboardComponent implements OnInit {
     private router: Router
   ) {
 
-    //Getting loggedUser from Authservice via inject.
-    this.loggedUser = authService.loggedUser;
+    //Checking and getting loggedUser from Authservice.
+    this.loggedUser = authService.checkIfLoggedIn();
 
     //Defining the userList
     this.userList = ['Mr. Nice', 'Narco', 'Bomvasto', 'Celeritas ', 'Magenta']

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,10 +18,9 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute
   ) {
 
-    //Getting loggedUser from Authservice via inject.
+    //Getting loggedUser from Authservice
     this.loggedUser = authService.checkIfLoggedIn();
-    console.log(this.loggedUser);
-  
+
   }
 
   ngOnInit() {
@@ -35,16 +34,14 @@ export class LoginComponent implements OnInit {
 
   }
 
-  // Uses authService function for user logout and redirects to login screen.
-  // This requires special same-page rerouting and event tracking. See ngOnInit.
+  // Uses authService function for user logout and chcks if user is logged in.
   logout(): void {
     this.authService.logout();
-    console.log(this.authService.checkIfLoggedIn())
     this.loggedUser = this.authService.checkIfLoggedIn();
   }
-
+  // Uses authService function to check if user is logged in
   checklog(): void {
     this.loggedUser = this.authService.checkIfLoggedIn();
-    }
+  }
 
 }

@@ -15,7 +15,8 @@ export class SingleuserComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    // Subscribing to parameters of the route url, which is then used to print the
+    // user name on the singleuser html.
     this.route.params.subscribe(params => {
       this.userId = params.id;
    })
